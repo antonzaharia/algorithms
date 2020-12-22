@@ -14,4 +14,4 @@ The files contain my way of solving the problems.
 
 Here is a link to my hackerrank profile:
 
-https://www.hackerrank.com/Zaharia_anton?hr_r=1
+https://www.hackerrank.com/Zaharia_anton

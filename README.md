@@ -1,10 +1,11 @@
 # HackerRank
 
-This repository contains my submissions to hackerrank.
+This repository contains interesting algorithms I find out and might be useful in my future work.
+I used Test-driven development (Rspec) to check my results.
 
 #
 
-I started solving problems on Hacker Rank as a way to practice my algorithms skills in Ruby and Javascript.
+I started solving problems as a way to practice my algorithms skills in Ruby and Javascript.
 
 #
 

@@ -1,7 +1,7 @@
 const assert = require("assert");
 const threeAndFive = require("../threeAndFive.js");
 
-describe("Function", function () {
+describe("threeAndFive()", function () {
   it("should return only multiples of 3 or 5", function () {
     const multipleOf3 = threeAndFive(4);
 

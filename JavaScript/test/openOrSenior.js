@@ -1,7 +1,7 @@
 const assert = require("assert");
 const openOrSenior = require("../openOrSenior.js");
 
-describe("Function", function () {
+describe("openOrSenior()", function () {
   it("should return Open Open if age is lower than 55", function () {
     const test1 = openOrSenior([
       [45, 12],

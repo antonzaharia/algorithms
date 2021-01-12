@@ -21,6 +21,17 @@ class PaginationHelper
       if page_index < 0
         return -1
       else
+        pageHash = main_hash.select { |p| p['page'] == page_index}
+        pageHash.size == 0 ? -1 : pageHash.size
+      end
+    end
+      
+    def page_index(item_index) 
+        item = main_hash.select{ |i| i['index'].to_i == item_index.to_i}
+        item.size > 0 ? item[0]['page'] : -1 
+    end
+
+    def main_hash
         main = []
         page = 0
         number_per_page = 0
@@ -37,12 +48,6 @@ class PaginationHelper
             end
             main << new_item
         end
-        pageHash = main.select { |p| p['page'] == page_index}
-        pageHash.size == 0 ? -1 : pageHash.size
-      end
-    end
-      
-    def page_index(item_index) 
-        
+        main
     end
   end

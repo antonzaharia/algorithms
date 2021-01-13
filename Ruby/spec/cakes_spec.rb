@@ -9,8 +9,8 @@ describe Cakes do
         test = Cakes.new.cakes({"eggs"=>1}, {"eggs"=>5})
         expect(test).to eq(5)
     end
-    it 'should return how many cakes can be made from the ingredients avalilable' do
-        test = Cakes.new.cakes({"apples"=>3, "flour"=>300, "sugar"=>150, "milk"=>100, "oil"=>100},{"sugar"=>500, "flour"=>2000, "milk"=>2000, "apples"=>15, "oil"=>20})
+    it 'should return 0 if there is a missing ingredient' do
+        test = Cakes.new.cakes({"apples"=>3, "flour"=>300, "sugar"=>150, "milk"=>100, "oil"=>100},{"sugar"=>500, "flour"=>2000, "milk"=>2000})
         expect(test).to eq(0)
     end
     it 'should return how many cakes can be made from the ingredients avalilable' do

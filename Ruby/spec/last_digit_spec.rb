@@ -5,6 +5,10 @@ describe LastDigit do
         test = LastDigit.new.last_digit(4, 1)
         expect(test).to eq(4)
     end
+    it 'should return 1 if 0 ** 0' do
+        test = LastDigit.new.last_digit(0, 0)
+        expect(test).to eq(1)
+    end
     it 'should return last decimal digit of a ** b with small numbers' do
         test1 = LastDigit.new.last_digit(4, 2)
         expect(test1).to eq(6)

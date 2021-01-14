@@ -18,7 +18,7 @@ describe LastDigit do
     it 'should return last decimal digit of a ** b with large numbers' do
         test1 = LastDigit.new.last_digit(10, 10 ** 10)
         expect(test1).to eq(0)
-        test2 = LastDigit.new.last_digit(2 ** 200, 2 ** 300)
-        expect(test2).to eq(6)
+        test2 = LastDigit.new.last_digit(20 ** 200, 20 ** 300)
+        expect(test2).to eq(0)
     end
 end

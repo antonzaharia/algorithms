@@ -7,11 +7,6 @@ class PokerHand
     def define_score(hand)
         score = 0
         cards_in_pairs = []
-        pair_one = false
-        pair_two = false
-        three = false
-        four = false
-        full = false
         hand.split(' ').each do |card|
             hand.split(' ').each do |c|
                 if card != c && c.split('')[0] == card.split('')[0]
@@ -22,16 +17,43 @@ class PokerHand
             end
         end
         if cards_in_pairs.size == 5
-          full = true
+          score = 6
         elsif cards_in_pairs.size == 4 && cards_in_pairs.all? { |c| cards_in_pairs[0].split("")[0] == c.split("")[0]}
-          four = true
+          score = 7
         elsif cards_in_pairs.size == 4
-          pair_two = true
+          score = 2
         elsif cards_in_pairs.size == 3
-          three = true
+          score = 3
         elsif cards_in_pairs.size == 2
-          pair_one = true
+          score = 1
         end
+        numbers = hand.split(" ").map do |c|
+          card = c.split("")[0]
+          if card.to_i == 0
+            if card == "J"
+              11
+            elsif card == "Q"
+              12
+            elsif card == "K"
+              13
+            elsif card == "A"
+              14
+            end
+          else
+            card.to_i
+          end
+        end
+        straight = numbers.sort.each_cons(2).all? {|a, b| b == a + 1 }
+        if straight
+          score = 4
+        end
+        signs = hand.split(" ").map { |c| c.split("")[1] }
+        if signs.uniq.size <= 1 && score > 0
+          score = 8
+        elsif signs.uniq.size <= 1
+          score = 5
+        end
+        score
     end
         
     def compare_with(other)

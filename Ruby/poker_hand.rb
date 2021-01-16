@@ -27,23 +27,7 @@ class PokerHand
         elsif cards_in_pairs.size == 2
           score = 1
         end
-        numbers = hand.split(" ").map do |c|
-          card = c.split("")[0]
-          if card.to_i == 0
-            if card == "J"
-              11
-            elsif card == "Q"
-              12
-            elsif card == "K"
-              13
-            elsif card == "A"
-              14
-            end
-          else
-            card.to_i
-          end
-        end
-        straight = numbers.sort.each_cons(2).all? {|a, b| b == a + 1 }
+        straight = numbers(hand).sort.each_cons(2).all? {|a, b| b == a + 1 }
         if straight
           score = 4
         end
@@ -55,9 +39,41 @@ class PokerHand
         end
         score
     end
+    def numbers(hand)
+        numbers = hand.split(" ").map do |c|
+            card = c.split("")[0]
+            if card.to_i == 0
+              if card == "J"
+                11
+              elsif card == "T"
+                  10
+              elsif card == "Q"
+                12
+              elsif card == "K"
+                13
+              elsif card == "A"
+                14
+              end
+            else
+              card.to_i
+            end
+        end
+    end
         
     def compare_with(other)
-      other
+      if define_score(@hand) > define_score(other)
+        "Win"
+      elsif define_score(@hand) < define_score(other)
+        "Loss"
+      elsif define_score(@hand) == define_score(other)
+        if numbers(@hand).sum > numbers(other).sum
+            "Win"
+        elsif numbers(@hand).sum < numbers(other).sum
+            "Loss"
+        else
+            "Tie"
+        end
+      end
     end
   
   end

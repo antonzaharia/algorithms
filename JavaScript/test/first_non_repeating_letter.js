@@ -18,4 +18,8 @@ describe("first_non_repeating_letter()", function () {
     test = first_non_repeating_letter("moonmen");
     assert.strictEqual(test, "e");
   });
+  it("should handle letter cases", function () {
+    test = first_non_repeating_letter("eEt");
+    assert.strictEqual(test, "t");
+  });
 });

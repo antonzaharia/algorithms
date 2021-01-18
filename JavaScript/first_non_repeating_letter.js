@@ -1,7 +1,7 @@
 function first_non_repeating_letter(str) {
   const getCount = (arr, letter) => {
     let count = 0;
-    arr.forEach((l) => l === letter && count++);
+    arr.forEach((l) => l.toLowerCase() === letter.toLowerCase() && count++);
     return count;
   };
 

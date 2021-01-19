@@ -1,4 +1,10 @@
 function arrayDiff(a, b) {
-  a;
+  let output = [];
+  a.forEach((element) => {
+    if (!b.includes(element)) {
+      output.push(element);
+    }
+  });
+  return output;
 }
 module.exports = arrayDiff;

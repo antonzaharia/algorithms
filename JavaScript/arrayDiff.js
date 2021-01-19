@@ -1,4 +1,4 @@
 function arrayDiff(a, b) {
-  return a;
+  a;
 }
 module.exports = arrayDiff;

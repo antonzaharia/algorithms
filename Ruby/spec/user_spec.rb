@@ -19,4 +19,21 @@ describe User do
         user.inc_progress(-5)
         expect(user.rank).to eq(-7)
     end
+    it 'should correctly update the progress if action and user rank are equal' do
+        user = User.new
+        user.inc_progress(-8)
+        expect(user.progress).to eq(3)
+    end
+    it 'should correctly update the progress if action rank is 1 level lower than user rank' do
+        user = User.new
+        user.inc_progress(-4) # set user rank to -7 (user progress 60)
+        user.inc_progress(-8)
+        expect(user.progress).to eq(61)
+    end
+    it 'should ignore any action that is 2 levels lower than user rank' do
+        user = User.new
+        user.inc_progress(-1) # set user rank to -4 (user progress 90)
+        user.inc_progress(-8)
+        expect(user.progress).to eq(90)
+    end
 end

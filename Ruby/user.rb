@@ -16,9 +16,20 @@ class User
         @progress
     end
 
-    def inc_progress(action_rank)
-        d = RANK_ARR.find_index(@rank) - RANK_ARR.find_index(action_rank)
-        progress_build = 10 * d * d
+    def inc_progress(action)
+        user_rank = RANK_ARR.find_index(@rank)
+        action_rank = RANK_ARR.find_index(action)
+        d = user_rank - action_rank
+        if user_rank > action_rank && d == 1
+            progress_build = 1
+        elsif user_rank > action_rank && d > 1
+            progress_build = 0
+        elsif user_rank == action_rank
+            progress_build = 3
+        else
+            progress_build = 10 * d * d
+        end
+        
         set_progress(progress_build)
     end
 

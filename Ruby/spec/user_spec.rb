@@ -36,4 +36,12 @@ describe User do
         user.inc_progress(-8)
         expect(user.progress).to eq(90)
     end
+    it 'should keep progress at 0 after rank 8' do
+        user = User.new
+        user.inc_progress(-1)
+        user.inc_progress(7)
+        user.inc_progress(8)
+        user.inc_progress(8)
+        expect(user.progress).to eq(0)
+    end
 end

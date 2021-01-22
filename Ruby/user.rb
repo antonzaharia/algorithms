@@ -40,7 +40,11 @@ class User
             rank_up
             total = total -100
         end
-        @progress = total
+        if self.rank < 8
+            @progress = total
+        else
+            @progress = 0
+        end
     end
     def rank_up
         if @rank <= 8

@@ -13,10 +13,11 @@ class FlapDisplay
     def set_index(given_index, rotor)
         output = given_index + rotor
         while output > 26 do
-          output = 25 - given_index
+          output = rotor - 26
         end
         output
     end
+    
     def display(line_arr, rotor_arr)
         word = []
         rotor_arr.each_with_index do |rotor, i|

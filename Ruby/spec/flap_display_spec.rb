@@ -10,7 +10,7 @@ describe FlapDisplay do
         expect(test).to eq(["NOTHING MOVED"])
     end
     it 'should correctly change the letters' do
-        test = FlapDisplay.new.flap_display(["CAT"],[[1, 13, 27]])
+        test = FlapDisplay.new.flap_display(["CAT"],[[1, 14, 27]])
         expect(test).to eq(["DOG"])
     end
     it 'should correctly change the letters in longer strings' do

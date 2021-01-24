@@ -18,7 +18,7 @@ describe FlapDisplay do
         expect(test).to eq(["CAN HEAR YOU SCREAM"])
     end
     it 'should handle multiple elements array as input' do
-        test = FlapDisplay.new.flap_display(["IN", "SPACE", "NOBODY"],[[48, 47], [0, 21, 38, 120, 48], [15, 41, 11, 43, 19, 47]])
+        test = FlapDisplay.new.flap_display([["IN"], ["SPACE"], ["NOBODY"]],[[48, 47], [0, 21, 38, 120, 48], [15, 41, 11, 43, 19, 47]])
         expect(test).to eq(["CAN", "HEAR", "YOU", "SCREAM!"])
     end
 end

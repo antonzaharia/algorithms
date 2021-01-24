@@ -3,13 +3,9 @@ class FlapDisplay
     def flap_display(lines, rotors)
         output = []
         if lines.size > 0
-            word = []
-            rotors[0].each_with_index do |rotor, i|
-              line_arr = lines[0].split("")[i]
-                given_index = ABC.find_index(line_arr)
-                word << ABC[set_index(given_index, rotor)]
+            lines.each_with_index do |line, index|
+                output << display(line, rotors[index])
             end
-            output << word.join("")
         end
         output
     end
@@ -20,5 +16,18 @@ class FlapDisplay
           output = 25 - given_index
         end
         output
-      end
+    end
+    def display(line_arr, rotor_arr)
+        word = []
+        rotor_arr.each_with_index do |rotor, i|
+            line = line_arr.split("")[i]
+            given_index = ABC.find_index(line)
+            if rotor > 0
+                word << ABC[set_index(given_index, rotor)]
+            else
+                word << line 
+            end
+        end
+        word.join("")
+    end
 end

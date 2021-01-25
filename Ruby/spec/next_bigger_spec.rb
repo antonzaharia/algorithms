@@ -13,4 +13,8 @@ describe NextBigger do
         test = NextBigger.new.next_bigger(513)
         expect(test).to eq(531)
     end
+    it 'should return the next bigger number of 4 digit numbers' do
+        test = NextBigger.new.next_bigger(2017)
+        expect(test).to eq(2071)
+    end
 end

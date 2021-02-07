@@ -12,7 +12,7 @@ describe("tickets()", function () {
   });
   it("should return YES if enough change is available", function () {
     let test = tickets([25, 25, 50, 50]);
-    assert.strictEqual(test, "NO");
+    assert.strictEqual(test, "YES");
   });
   it("should return NO if not enough change is available", function () {
     let test = tickets([25, 25, 50, 50, 100]);

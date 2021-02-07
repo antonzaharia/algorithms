@@ -1,5 +1,3 @@
-function tickets(peopleInLine) {
-  return peopleInLine;
-}
+function tickets(peopleInLine) {}
 
 module.exports = tickets;

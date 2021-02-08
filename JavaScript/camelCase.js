@@ -1,5 +1,8 @@
 String.prototype.camelCase = function () {
-  const word = Array.from(this);
+  let word = Array.from(this);
+  if (word[word.length - 1] === " ") {
+    word.splice(-1, 1);
+  }
   output = [];
   for (let i = 0; i < word.length; i++) {
     if (i === 0) {

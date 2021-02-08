@@ -14,4 +14,8 @@ describe("cameCase()", function () {
     let test = "camel case method".camelCase();
     assert.strictEqual(test, "CamelCaseMethod");
   });
+  it("should remove the space from ending of the string", function () {
+    let test = "camel case method ".camelCase();
+    assert.strictEqual(test, "CamelCaseMethod");
+  });
 });

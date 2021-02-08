@@ -1,3 +1,3 @@
-String.prototype.camelCase = function (str) {
-  return "test";
+String.prototype.camelCase = function () {
+  return Array.from(this).join("");
 };

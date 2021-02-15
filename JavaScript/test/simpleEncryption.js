@@ -8,7 +8,7 @@ describe("encrypt()", () => {
     assert.strictEqual(test, "This is a test!");
   });
   it("should return text input encrypted once", () => {
-    let test = encrypt("This is a test!", 0);
+    let test = encrypt("This is a test!", 1);
     assert.strictEqual(test, "hsi  etTi sats!");
   });
   it("should return text input encrypted twice", () => {

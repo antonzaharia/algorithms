@@ -25,16 +25,8 @@ describe("decrypt()", () => {
     let test = decrypt("This is a test!", 0);
     assert.strictEqual(test, "This is a test!");
   });
-  it("should return decrypted test once", () => {
-    let test = decrypt("hsi  etTi sats!", 1);
-    assert.strictEqual(test, "This is a test!");
-  });
   it("should return decrypted test twice", () => {
     let test = decrypt("s eT ashi tist!", 2);
-    assert.strictEqual(test, "This is a test!");
-  });
-  it("should return decrypted test three times", () => {
-    let test = decrypt(" Tah itse sits!", 3);
     assert.strictEqual(test, "This is a test!");
   });
 });

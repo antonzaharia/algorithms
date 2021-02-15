@@ -26,9 +26,12 @@ function oneDecryption(text) {
 function encrypt(text, n) {
   let output = text;
   for (let i = 0; i < n; i++) {
+    if (output === null) {
+      break;
+    }
     output = oneEncryption(output);
   }
-  if (n === 0) {
+  if (n === 0 || text === null) {
     return text;
   } else {
     return output;
@@ -38,9 +41,12 @@ function encrypt(text, n) {
 function decrypt(encryptedText, n) {
   let output = encryptedText;
   for (let i = 0; i < n; i++) {
+    if (output === null) {
+      break;
+    }
     output = oneDecryption(output);
   }
-  if (n === 0) {
+  if (n === 0 || encryptedText === null) {
     return encryptedText;
   } else {
     return output;

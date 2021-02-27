@@ -1,4 +1,4 @@
 function add(a, b) {
-  return a;
+  return (Number(a) + Number(b)).toString();
 }
 module.exports = add;

@@ -1,3 +1,10 @@
+const renderSeconds = (number) =>
+  number === 1 ? `${1} second` : `${number} seconds`;
+const renderMinutes = (number) =>
+  number === 1 ? `${2} minute` : `${number} minutes`;
+const renderHours = (number) =>
+  number === 1 ? `${number} hour` : `${number} hours`;
+
 function formatDuration(seconds) {
   let minutes = 0;
   let hours = 0;
@@ -13,7 +20,16 @@ function formatDuration(seconds) {
       hours += 1;
     }
   }
-  return `${hours} hours ${minutes} minutes ${s} seconds`;
+  let spaces = 0;
+  let arrOfTimes = [hours, minutes, s];
+  arrOfTimes.map((n) => {
+    if (n > 0) {
+      spaces += 1;
+    } else {
+      let index = arrOfTimes.indexOf(n);
+      arrOfTimes.splice(index, 1);
+    }
+  });
 }
 
 module.exports = formatDuration;

@@ -30,6 +30,27 @@ function formatDuration(seconds) {
       arrOfTimes.splice(index, 1);
     }
   });
+  if (spaces === 3) {
+    return `${renderHours(hours)}, ${renderMinutes(
+      minutes
+    )} and ${renderSeconds(s)}`;
+  } else if (spaces === 2) {
+    if (hours === 0) {
+      return `${renderMinutes(minutes)} and ${renderSeconds(s)}`;
+    } else if (minutes === 0) {
+      return `${renderHours(hours)} and ${renderSeconds(s)}`;
+    } else if (s === 0) {
+      return `${renderHours(hours)} and ${renderMinutes(minutes)}`;
+    }
+  } else {
+    if (minutes === 0 && seconds === 0) {
+      return `${renderHours(hours)}`;
+    } else if (hours === 0 && minutes === 0) {
+      return `${renderSeconds(s)}`;
+    } else if (hours === 0 && s === 0) {
+      return `${renderSeconds(s)}`;
+    }
+  }
 }
 
 module.exports = formatDuration;

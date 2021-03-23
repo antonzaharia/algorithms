@@ -1,9 +1,8 @@
 class ToUnderscore
     def to_underscore(string)
         array = []
-        last_index = 0
-        string.split("").each_with_index do |letter, i|
-            if letter == letter.upcase
+        string.split("").each do |letter|
+            if letter != letter.downcase
                 if array.size == 0
                     array << letter.downcase
                 else
@@ -14,5 +13,6 @@ class ToUnderscore
             end
         end
         array.join("")
+
     end
-end
+end   

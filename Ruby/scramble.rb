@@ -4,6 +4,9 @@ class Scramble
         @str2 = str2
     end
     def play
-        @str1
+        arr = @str2.split("").map do |letter|
+            @str1.split("").include?(letter)
+        end
+        arr.include?(false) ? false : true
     end
 end

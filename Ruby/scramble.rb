@@ -4,9 +4,15 @@ class Scramble
         @str2 = str2
     end
     def play
-        arr = @str2.split("").map do |letter|
-            @str1.split("").include?(letter)
+        word = @str1.split("")
+        arrOfBools = @str2.split("").map do |letter|
+            if word.include?(letter)
+                word.delete_at(word.index(letter))
+                true
+            else
+                false
+            end
         end
-        arr.include?(false) ? false : true
+        arrOfBools.include?(false) ? false : true
     end
 end
